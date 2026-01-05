@@ -24,11 +24,11 @@ ChartJS.register(
 
 // Chart data
 const data = {
-  labels: ["January", "February", "March", "April", "May", "June","July","August","Septemper","October","November","December"],
+  labels: ["January", "February", "March", "April", "May", "June","July","August","Septemper","October","November","December","yoyoyoyo","aoudoiusoi","dsfsdfsdf","asdddqwd","qeqweda"],
   datasets: [
     {
       label: "Sales",
-      data: [ 3000, 5520, 2800, 1002,1500,5800,4851,8920,10000,1520,8204,7893],
+      data: [ 30000000, 5520, 2800, 1002,1500,5800,4851,8920,100646500,1520,82044644,7893,45454,4654446],
       borderColor: "#38BDF8",
       backgroundColor: "#38BDF8",
       tension: 0.4
@@ -47,7 +47,7 @@ const options = {
 
 const LineChart = () => {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Line  data={data} options={options} />
     </div>
   );

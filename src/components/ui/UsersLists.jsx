@@ -2,16 +2,32 @@ import React from 'react'
 
 const UsersLists = () => {
   return (
-    <div className='grid grid-cols-4 mt-2 items-center text-lg text-[#F9FAFB] font-medium border-b border-gray-500 py-2'>
-            <div className='flex items-center gap-3'>
-            <img className='w-10 h-10 rounded-4xl object-center object-cover' src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-            <p className='text-lg font-light  cursor-pointer'>Admin</p>
-           </div>
-         <p>Amit@gmail.com</p>
-         <p className='bg-[#22C55E] rounded-lg py-1 px-2 w-25'>Active</p>
-         <p>10 minutes ago</p>
-         </div>
+    <>
+      <div className=" border-b border-[#1F2937] py-2 flex justify-between  gap-2">
+        <div className="flex items-center gap-3">
+          <img
+            className="w-10 h-10 rounded-full object-cover"
+            src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6"
+            alt=""
+          />
+          <div>
+            <p className="text-[#F9FAFB] font-medium">Admin</p>
+            <p className="text-sm text-[#9CA3AF] truncate">
+              amit@gmail.com
+            </p>
+          </div>
+        </div>
+        <div className='sm:flex items-center gap-5'>
+          <span className="inline-flex rounded-lg text-[#F9FAFB] bg-[#22C55E] px-4 py-2 text-md font-medium">
+            Active
+          </span>
+          <p className=" mt-4 text-sm text-[#9CA3AF]">
+            10 minutes ago
+          </p>
+          </div>
+      </div>
+         </>
   )
 }
 
-export default UsersLists
+export default UsersLists 
