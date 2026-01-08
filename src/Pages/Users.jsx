@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import UsersLists from '../components/ui/UsersLists'
+import { AppData } from '../context/AppDatacontext'
 const Users = () => {
+  const Data = useContext(AppData)
+ 
+  
   return (
     <div className='p-8 flex flex-col gap-7'>
       <h2 className='text-3xl text-[#F9FAFB] font-medium' > Users</h2>
@@ -11,10 +15,9 @@ const Users = () => {
       </div>
       
       <div className='rounded-lg border border-[#1F2937]  bg-[#111827] p-4 sm:p-5 overflow-x-auto '>
-     <UsersLists />
-     <UsersLists />
-     <UsersLists />
-     <UsersLists />
+    {Data.users.map((e)=>{
+     return <UsersLists key={e.id} data={e} />
+    })}
       </div>
 
     </div>

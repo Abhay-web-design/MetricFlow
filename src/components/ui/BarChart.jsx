@@ -19,28 +19,7 @@ ChartJS.register(
   Legend
 );
 
-// Chart data
-const data = {
-  labels: ["January", "February", "March", "April", "May", "June"],
-  datasets: [
-    {
-      label: "Sales1",
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: "#38BDF8",
-    },
-     {
-      label: "Sales2",
-      data: [23, 5, 8, 26, 15, 30],
-      backgroundColor: "#22C55E",
-    },
-    {
-      label: "Sales3",
-      data: [12, 19, 33, 20, 22, 12],
-      backgroundColor: "#64748B",
-    },
-  ],
-  
-};
+
 
 // Chart options
 const options = {
@@ -51,7 +30,21 @@ const options = {
   },
 };
 
-export default function App() {
+export default function App({label,value}) {
+
+  // Chart data
+const data = {
+  labels:label,
+  datasets: [
+    {
+      label: "",
+      data: value,
+      backgroundColor: "#38BDF8",
+      borderRadius: 6,
+    }
+  ],
+  
+};
   return (
     <div className="w-full">
       <Bar data={data} options={options} />

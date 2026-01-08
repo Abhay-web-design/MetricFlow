@@ -10,6 +10,10 @@ const DashboardLayout = () => {
   return (
     <div className='relative'>
   <Dashboard />
+  <Analytics />
+  <Users />
+  <Settings />
+  
     </div>
   )
 }

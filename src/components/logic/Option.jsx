@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Option = ({value,text}) => {
-    console.log(value);
+   
     
   return (
    <>
