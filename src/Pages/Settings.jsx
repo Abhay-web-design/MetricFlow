@@ -39,8 +39,8 @@ data2:[
               <span className='text-[#F9FAFB] font-medium text-md'>Default Data Range:</span>
         <div className='text-md py-2 px-4 rounded-lg  border border-[#1F2937]  bg-[#111827]'>
         <select className='text-[#F9FAFB] bg-[#111827] rounded-lg focus:ring-none focus:outline-none' name="Data Range">
-         {obj.data1.map((e)=>{
-            return <Option value={e.value} text={e.text} />
+         {obj.data1.map((e,index)=>{
+            return <Option key={index} value={e.value} text={e.text} />// giving key as index is not a good way..
           })}
         </select>
         </div>
@@ -49,8 +49,8 @@ data2:[
                 <span className='text-[#F9FAFB] font-medium text-md'>Default Events:</span>
             <div className='text-md py-2 px-4 rounded-lg border border-[#1F2937]  bg-[#111827]'>
             <select className='text-[#F9FAFB] bg-[#111827] rounded-lg focus:ring-none focus:outline-none' name="Events">
-             {obj.data2.map((e)=>{
-            return <Option value={e.value} text={e.text} />
+             {obj.data2.map((e,index)=>{
+            return <Option key={index} value={e.value} text={e.text} />// giving key as index is not a good way..
           })}
             </select>
             </div>

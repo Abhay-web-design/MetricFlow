@@ -6,7 +6,8 @@ import { AppData } from '../context/AppDatacontext'
 
 const Dashboard = () => {
  const Data =  useContext(AppData);
- const {labels, data} = Data.dashboard.userGrowth
+ 
+ const {labels, data} = Data.Data.dashboard.userGrowth
 
  
  
@@ -14,8 +15,8 @@ const Dashboard = () => {
     <div className='p-5 flex flex-col gap-7'>
       <h2 className='text-[#F9FAFB] text-3xl font-medium'>Dashboard <span className='font-light'>Overview</span></h2>
      <div className='w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-between'>
-      {Data.dashboard.cards.map((e)=>{
-        return <Card obj ={e} />
+      {Data.Data.dashboard.cards.map((e,index)=>{
+        return <Card key={index} obj ={e} /> //giving the key as index is not a good way...
       })}
       </div>
       <div className='grid md:grid-cols-2 gap-8 '>

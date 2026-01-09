@@ -12,7 +12,7 @@ const SideUsersShow = () => {
           <p>Name</p>
          <p>Status</p>
          </div>
-        {Data.dashboard.recentUsers.map((e)=>{ 
+        {Data.Data.dashboard.recentUsers.map((e)=>{ 
           return <SideUserList key={e.id} data = {e} />
         })}
          

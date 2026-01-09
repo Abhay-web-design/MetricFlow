@@ -8,7 +8,7 @@ import { AppData } from '../context/AppDatacontext'
 
 const Analytics = () => {
   const Data = useContext(AppData)
-    const {labels,data} = Data.analytics.dailyLogins;
+    const {labels,data} = Data.Data.analytics.dailyLogins;
     
   return (
     <div className='p-4 flex flex-col gap-7'>
@@ -19,9 +19,8 @@ const Analytics = () => {
       <LineChart labels = {labels} data = {data} />
       </div>
       <div className='grid gap-5 md:grid-cols-2'>
-       {Data.analytics.usageGraph.map((e)=>{
-        console.log(e);
-        return <GraphCard title={e.title} graph={e.graph}/>
+       {Data.Data.analytics.usageGraph.map((e,index)=>{
+        return <GraphCard key={index} title={e.title} graph={e.graph}/> // giving key as a index is nota good way..
        })}
       </div>
 

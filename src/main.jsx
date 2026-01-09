@@ -6,9 +6,12 @@ import { BrowserRouter } from 'react-router-dom'
 import AppDatacontext from './context/AppDatacontext.jsx'
 
 createRoot(document.getElementById('root')).render(
+
+<BrowserRouter>
 <AppDatacontext >
  <App />
 </AppDatacontext>
+</BrowserRouter>
 
  
   

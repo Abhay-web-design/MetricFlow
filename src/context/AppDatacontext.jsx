@@ -1,6 +1,10 @@
+import { useState } from "react"
 import React, { createContext } from 'react'
 export const AppData = createContext()
- const Data = {
+ 
+
+const AppDatacontext = ({children}) => {
+  const Data = {
   // =========================
   // DASHBOARD DATA
   // =========================
@@ -37,6 +41,30 @@ export const AppData = createContext()
         status: "Inactive",
         avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
       },
+      {
+    id: 4,
+    name: "Sneha Iyer",
+    email: "sneha@gmail.com",
+    status: "Active",
+    lastActive: "25 min ago",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+  },
+  {
+    id: 5,
+    name: "Arjun Patel",
+    email: "arjun@gmail.com",
+    status: "Inactive",
+    lastActive: "1 day ago",
+    avatar: "https://randomuser.me/api/portraits/men/77.jpg",
+  },
+  {
+    id: 6,
+    name: "Neha Kapoor",
+    email: "neha@gmail.com",
+    status: "Active",
+    lastActive: "5 min ago",
+    avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+  }
     ],
   },
 
@@ -81,7 +109,103 @@ export const AppData = createContext()
   // =========================
   users: [
     {
-      id: 1,
+    id: 1,
+    name: "Amit Sharma",
+    email: "amit@gmail.com",
+    status: "Active",
+    lastActive: "2 min ago",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    id: 2,
+    name: "Priya Verma",
+    email: "priya@gmail.com",
+    status: "Active",
+    lastActive: "10 min ago",
+    avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+  },
+  {
+    id: 3,
+    name: "Rahul Mehta",
+    email: "rahul@gmail.com",
+    status: "Inactive",
+    lastActive: "1 hour ago",
+    avatar: "https://randomuser.me/api/portraits/men/51.jpg",
+  },
+  {
+    id: 4,
+    name: "Sneha Iyer",
+    email: "sneha@gmail.com",
+    status: "Active",
+    lastActive: "25 min ago",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+  },
+  {
+    id: 5,
+    name: "Arjun Patel",
+    email: "arjun@gmail.com",
+    status: "Inactive",
+    lastActive: "1 day ago",
+    avatar: "https://randomuser.me/api/portraits/men/77.jpg",
+  },
+  {
+    id: 6,
+    name: "Neha Kapoor",
+    email: "neha@gmail.com",
+    status: "Active",
+    lastActive: "5 min ago",
+    avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+  },
+  {
+    id: 7,
+    name: "Vikram Singh",
+    email: "vikram@gmail.com",
+    status: "Active",
+    lastActive: "1 hour ago",
+    avatar: "https://randomuser.me/api/portraits/men/90.jpg",
+  },
+  {
+    id: 8,
+    name: "Ananya Gupta",
+    email: "ananya@gmail.com",
+    status: "Inactive",
+    lastActive: "2 days ago",
+    avatar: "https://randomuser.me/api/portraits/women/14.jpg",
+  },
+  {
+    id: 9,
+    name: "Karan Malhotra",
+    email: "karan@gmail.com",
+    status: "Active",
+    lastActive: "15 min ago",
+    avatar: "https://randomuser.me/api/portraits/men/61.jpg",
+  },
+  {
+    id: 10,
+    name: "Pooja Nair",
+    email: "pooja@gmail.com",
+    status: "Active",
+    lastActive: "40 min ago",
+    avatar: "https://randomuser.me/api/portraits/women/36.jpg",
+  },
+  {
+    id: 11,
+    name: "Rohit Jain",
+    email: "rohit@gmail.com",
+    status: "Inactive",
+    lastActive: "4 days ago",
+    avatar: "https://randomuser.me/api/portraits/men/18.jpg",
+  },
+  {
+    id: 12,
+    name: "Isha Khanna",
+    email: "isha@gmail.com",
+    status: "Active",
+    lastActive: "8 min ago",
+    avatar: "https://randomuser.me/api/portraits/women/52.jpg",
+  },
+  {
+      id: 13,
       name: "Amit Sharma",
       email: "amit@gmail.com",
       status: "Active",
@@ -89,7 +213,7 @@ export const AppData = createContext()
       avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6",
     },
     {
-      id: 2,
+      id: 14,
       name: "Priya Verma",
       email: "priya@gmail.com",
       status: "Inactive",
@@ -109,11 +233,23 @@ export const AppData = createContext()
     monthlyNotification: true,
   },
 };
+const [input, setinput] = useState("");
+//search users or filter users
+let Userdata = Data.users.filter((e)=>{
+ let name =  input.toLowerCase();
+return(
+  e.name.toLowerCase().includes(name) 
+)
+});
 
-const AppDatacontext = ({children}) => {
+//profile div
+const [profile, setprofile] = useState(false);
+//sidebar 
+const [sidebar, setsidebar] = useState(false);
+
   return (
     <div>
-        <AppData.Provider value={Data}>
+        <AppData.Provider value={{Data,setinput,input,Userdata, profile, setprofile, sidebar, setsidebar}}>
             {children}
         </AppData.Provider>
         </div>

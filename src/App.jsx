@@ -7,6 +7,7 @@ const App = () => {
     <div className='relative bg-[#0B1220] w-full min-h-screen'>
         <Navbar />
         <DashboardLayout />
+        
     </div>
   )
 }
