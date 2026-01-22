@@ -7,6 +7,9 @@ MetricFlow is built as a **product-grade frontend project**, showcasing real-wor
 
 ---
 
+## Live Preview:
+https://metric-flow-chart.netlify.app/
+
 ## ✨ Features
 
 - 📊 Interactive dashboard with charts & statistics  
@@ -86,4 +89,5 @@ npm install
 
 # Start the development server
 npm run dev
+
 
